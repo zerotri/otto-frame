@@ -1,0 +1,8 @@
+[Unit]
+Before=otto-boot.service
+
+[Service]
+ExecStart=/bin/bash -c "echo \"bq27500 0x55\" > /sys/class/i2c-dev/i2c-1/device/new_device"
+
+[Install]
+WantedBy=multi-user.target

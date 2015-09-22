@@ -1,0 +1,14 @@
+[Unit]
+Description=OTTO wifi script
+After=syslog.target auditd.service network.service
+
+[Service]
+Type=forking
+PIDFile=/run/hostapd.pid
+ExecStartPre=/bin/bash -c "sed -i \"s/ssid=otto-.*/ssid=otto-$(cat /sys/class/net/eth0/address | head -1 | sed 's/\://g')/g\" /etc/hostapd.conf"
+ExecStart=/usr/sbin/hostapd /etc/hostapd.conf -P /var/run/hostapd.pid -B
+ExecStop=/bin/kill -SIGINT $MAINPID
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

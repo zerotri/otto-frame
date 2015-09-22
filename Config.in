@@ -1,0 +1,43 @@
+menu "Stak"
+	depends on BR2_arm
+
+	config BR2_PACKAGE_META_OTTO
+	bool "otto-full-stack"
+	depends on BR2_arm
+	select BR2_PACKAGE_CREATE_AP
+	select BR2_PACKAGE_OTTOUPDATE
+	select BR2_PACKAGE_PYTHON
+	select BR2_PACKAGE_PYTHON_BOTTLE
+	help
+	  Full software stack for OTTO camera
+
+	source "$BR2_EXTERNAL/packages/ottosdk/Config.in"
+
+	menu "Libraries"
+		source "$BR2_EXTERNAL/packages/platform/generic/OttDate/Config.in"
+		source "$BR2_EXTERNAL/packages/platform/generic/fwup/Config.in"
+		source "$BR2_EXTERNAL/packages/platform/generic/fwup/Config.in.host"
+		source "$BR2_EXTERNAL/packages/platform/raspberrypi/libbcm2835/Config.in"
+		source "$BR2_EXTERNAL/packages/platform/raspberrypi/armmem/Config.in"
+		source "$BR2_EXTERNAL/packages/platform/raspberrypi/gifsicle/Config.in"
+		source "$BR2_EXTERNAL/packages/platform/raspberrypi/rpi-userland/Config.in"
+		source "$BR2_EXTERNAL/packages/platform/raspberrypi/dcfldd/Config.in"
+		source "$BR2_EXTERNAL/packages/platform/raspberrypi/otto-fastcamd/Config.in"
+		source "$BR2_EXTERNAL/packages/platform/raspberrypi/otto-boot/Config.in"
+		source "$BR2_EXTERNAL/packages/platform/raspberrypi/otto-wifi/Config.in"
+		source "$BR2_EXTERNAL/packages/platform/raspberrypi/otto-logo/Config.in"
+		source "$BR2_EXTERNAL/packages/platform/raspberrypi/otto-shutdown/Config.in"
+		source "$BR2_EXTERNAL/packages/platform/raspberrypi/otto-hostname/Config.in"
+		source "$BR2_EXTERNAL/packages/platform/raspberrypi/ottoupdate/Config.in"
+		source "$BR2_EXTERNAL/packages/platform/raspberrypi/otto-gfx/Config.in"
+		source "$BR2_EXTERNAL/packages/platform/raspberrypi/otto-runner/Config.in"
+		source "$BR2_EXTERNAL/packages/platform/raspberrypi/otto-menu/Config.in"
+		source "$BR2_EXTERNAL/packages/platform/raspberrypi/otto-network-setup/Config.in"
+		source "$BR2_EXTERNAL/packages/platform/raspberrypi/otto-gif-mode/Config.in"
+		source "$BR2_EXTERNAL/packages/platform/raspberrypi/libOttoHardware/Config.in"
+		source "$BR2_EXTERNAL/packages/platform/raspberrypi/nanosvg/Config.in"
+		source "$BR2_EXTERNAL/packages/platform/raspberrypi/create_ap/Config.in"
+		source "$BR2_EXTERNAL/packages/platform/rtl81xx/Config.in"
+	endmenu
+endmenu
+

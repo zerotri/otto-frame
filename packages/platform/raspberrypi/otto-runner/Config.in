@@ -1,0 +1,10 @@
+config BR2_PACKAGE_OTTO_RUNNER
+	bool "otto-runner"
+	depends on BR2_arm
+  depends on BR2_PACKAGE_LIBOTTOHARDWARE
+  depends on BR2_PACKAGE_RPI_USERLAND
+	help
+	  Hardware Interface library for the BCM2835 chip.
+
+	  http://www.airspayce.com/mikem/bcm2835/
+

@@ -1,0 +1,12 @@
+[Unit]
+Description=OTTO bootup script
+After=syslog.target auditd.service
+Wants=connman.service
+
+[Service]
+ExecStart=/bin/nice -n -10 /usr/bin/otto-runner /stak/sdk/libotto_menu.so /stak/sdk/libotto_gif_mode.so
+ExecStop=/bin/kill -SIGINT $MAINPID
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

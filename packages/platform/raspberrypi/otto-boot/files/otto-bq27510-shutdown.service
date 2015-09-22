@@ -1,0 +1,4 @@
+[Unit]
+Before=halt.target
+[Service]
+ExecStart=/bin/bash -c "echo \"0x55\" > /sys/class/i2c-dev/i2c-1/device/delete_device"

@@ -1,0 +1,8 @@
+config BR2_PACKAGE_OTTO_GIF_MODE
+	bool "otto-gif-mode"
+	depends on BR2_arm
+	help
+	  Hardware Interface library for the BCM2835 chip.
+
+	  http://www.airspayce.com/mikem/bcm2835/
+

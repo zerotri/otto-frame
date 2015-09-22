@@ -1,0 +1,8 @@
+[Unit]
+Description=Pull pin 4 low on shutdown
+DefaultDependencies=no
+
+[Service]
+ExecStart=/usr/bin/otto-poweroff
+Type=oneshot
+

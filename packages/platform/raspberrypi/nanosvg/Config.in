@@ -1,0 +1,3 @@
+config BR2_PACKAGE_NANOSVG
+	bool "nanosvg"
+	depends on BR2_arm

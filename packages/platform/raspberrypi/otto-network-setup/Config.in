@@ -1,0 +1,9 @@
+config BR2_PACKAGE_OTTO_NETWORK_SETUP
+	bool "otto-network-setup"
+  help
+    The webserver that allows to setup Otto's network
+    http://github.com/NextThingCo/otto-network-setup
+	depends on BR2_arm
+  depends on BR2_PACKAGE_HOSTAPD
+  depends on BR2_PACKAGE_DNSMASQ
+  depends on BR2_PACKAGE_CONNMAN

@@ -1,0 +1,8 @@
+config BR2_PACKAGE_BX
+	bool "bx"
+	depends on BR2_arm
+	help
+	  Cross-platform rendering library.
+
+	  https://github.com/bkaradzic/bx
+

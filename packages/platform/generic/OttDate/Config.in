@@ -1,0 +1,6 @@
+config BR2_PACKAGE_OTTDATE
+        bool "OttDate"
+        help
+          The Otto Updater
+
+          http://github.com/NextThingCo/OttDate

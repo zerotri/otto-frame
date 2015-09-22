@@ -1,0 +1,8 @@
+config BR2_PACKAGE_BGFX
+	bool "bgfx"
+	depends on BR2_PACKAGE_BX
+	help
+	  Cross-platform rendering library.
+
+	  https://github.com/bkaradzic/bgfx
+
