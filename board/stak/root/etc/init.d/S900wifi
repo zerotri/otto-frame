@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# Start logging
+#
+
+PIDFILE=/var/lock/wifi
+CREATE_AP=/usr/bin/create_ap
+MAC=`cat /sys/class/net/wlan0/address | sed s/://g`
+
+case "$1" in
+  start)
+	# exec main
+	start-stop-daemon --start --background --quiet --pidfile $PIDFILE --exec $CREATE_AP --  -n --daemon --driver rtl871xdrv wlan0 OTTOClear-$MAC allyourbase
+	;;
+  stop)
+	start-stop-daemon --stop --quiet --pidfile $PIDFILE
+	;;
+  restart|reload)
+	;;
+  *)
+	echo "Usage: $0 {start|stop|restart}"
+	start-stop-daemon --stop --quiet --oknodo --retry 30 --pidfile $PIDFILE
+	start-stop-daemon --start --background --quiet --pidfile $PIDFILE --exec $CREATE_AP --  -n --daemon --driver rtl871xdrv wlan0 OTTOClear-$MAC allyourbase
+	exit 1
+esac
+
+exit $?

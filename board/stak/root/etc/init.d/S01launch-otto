@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# Start logging
+#
+PIDFILE=/var/lock/otto
+case "$1" in
+  start)
+	# sed -i "/^kernel=/c\kernel=kernel.img" /boot/config.txt
+	# reboot
+	start-stop-daemon --start --background --quiet --pidfile $PIDFILE --exec main
+	# exec main
+	;;
+  stop)
+	start-stop-daemon --stop --quiet --pidfile $PIDFILE
+	;;
+  restart|reload)
+	;;
+  *)
+	echo "Usage: $0 {start|stop|restart}"
+	exit 1
+esac
+
+exit $?

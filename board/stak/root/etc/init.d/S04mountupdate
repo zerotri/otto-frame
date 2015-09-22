@@ -1,0 +1,3 @@
+#mkdir -p /data
+#mount /dev/mmcblk0p4 -t vfat /data
+#otto-update

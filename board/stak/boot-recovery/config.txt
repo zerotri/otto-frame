@@ -1,0 +1,7 @@
+kernel=recovery-kernel.img
+gpu_mem_256=128
+gpu_mem_512=256
+start_x=1
+boot_delay=0
+disable_splash=1
+initramfs recovery-rootfs.img 0x00800000

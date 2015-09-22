@@ -1,0 +1,5 @@
+#!/bin/sh
+modprobe asix
+modprobe 8192cu rtw_power_mgnt=0
+modprobe ip_tables
+modprobe iptable_filter
